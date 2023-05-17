@@ -113,6 +113,7 @@ div > .optionalMsg {
 .updateProfileForm > div > p,
 .signUpForm > div > p {
   font-size: 1vmax;
+  letter-spacing: 1px;
   opacity: 0.6;
 }
 .loginForm > span,

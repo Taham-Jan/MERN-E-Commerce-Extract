@@ -9,13 +9,14 @@ import { Button as MuiButton } from "@mui/material";
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   customButton: {
-    backgroundColor: "var(--ThemeColor)",
-    color: "#242424",
-    fontWeight: "550",
-    width: "100% !important",
-    padding: "0.5rem",
+    width:"max-content !important",
+    minWidth:"100% !important",
+    backgroundColor: "var(--ThemeColor) !important",
+    color: "#242424 !important" ,
+    fontWeight: "550 ",
+    padding: "0.5rem !important",
     "&:hover": {
-      backgroundColor: "#f3cb6c",
+      backgroundColor: "#f3cb6c !important",
     },
   },
 });

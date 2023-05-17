@@ -122,11 +122,11 @@ const AllProducts = () => {
         <Spinner />
       ) : (
         <>
-          <h2 className={styles.productsHeading}>ALL PRODUCT'S</h2>
+          <h2 className={styles.productsHeading}>ALL PRODUCTS</h2>
           <div className={styles.allProducts}>
             <div className={styles.filterBox}>
               <h2>FILTER</h2>
-              <Typography sx={{ fontSize: "1vmax", opacity: "0.7" }}>
+              <Typography sx={{ fontSize: "1vmax", opacity: "0.7",textAlign:"center" }}>
                 Sort by price range
               </Typography>
               <Box
@@ -183,7 +183,7 @@ const AllProducts = () => {
                   </RadioGroup>
                 </FormControl>
               </Box>
-              <Typography sx={{ fontSize: "1vmax", opacity: "0.7" }}>
+              <Typography sx={{ fontSize: "1vmax", opacity: "0.7",textAlign:"center"  }}>
                 Sort by category
               </Typography>
 

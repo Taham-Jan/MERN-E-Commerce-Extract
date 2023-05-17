@@ -5,45 +5,6 @@ import SearchFunction from "./SearchFunction";
 import BannerPng from "../Assets/BannerPng.png";
 const Banner = () => {
   return (
-    // <div className={styles.homeScreenWrapper}>
-    //   <div className={styles.homeScreenChildWrapper}>
-    //     <div className={styles.coloroverlay}></div>
-
-    //     <div className={styles.childWrapper}>
-    //       <div className={animationStyles.animatedText}>
-    //         <h1>
-    //           <span>Discover</span>
-    //           <span>the</span>
-    //           <span>Beauty</span>
-    //           <span>Within</span>
-    //           <span>You</span>
-    //           <hr />
-    //           <span>Shop</span>
-    //           <span>Our</span>
-    //           <span>Cosmetics</span>
-    //           <span>Collection,</span>
-    //           <span>Today!</span>
-    //           {/* <span>the</span>
-    //         <span>limits</span>
-    //         <span>you</span>
-    //         <span>place</span>
-    //         <span>on</span>
-    //         <span>your</span>
-    //         <span>own</span>
-    //         <span>thinking.</span> */}
-    //         </h1>
-    //       </div>
-    //       {/* <a href="#productContainer"></a> */}
-    //       {/* <SearchFunction/> */}
-    //     </div>
-    //     <div className={styles.BannerWrapper}>
-    //       <div className={styles.ball}>
-    //         <img alt="" src={BannerPng} />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
-
     <aside className={styles.MainBanner}>
       <div className={styles.ChildBanner}>
         <svg className={styles.cirlea} height="160" width="160">

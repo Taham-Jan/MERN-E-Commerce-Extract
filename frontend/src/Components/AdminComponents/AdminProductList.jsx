@@ -82,13 +82,14 @@ const AdminProductList = () => {
 
   return (
     <>
-      <div className={styles.productHeadings}>
-        <Link  to="/admin/product">
-          <Button>CREATE NEW</Button>
-        </Link>
+      <div className={styles.productHeadingsAdmin}>
         <h2>ALL PRODUCTS</h2>
-        <h4>Total Products: {products.length}</h4>
+        
+        <h4> Total Products: {products.length}</h4>
       </div>
+      <Link to="/admin/product">
+         <center> <Button sx={{margin:"auto",color:"var(--headerColor)",backgroundColor:"var(--PrimaryFontColor)"}}>CREATE NEW</Button></center>
+        </Link>
       <div className={containerStyles.products}>
         {deleteLoading ? (
           <Spinner />

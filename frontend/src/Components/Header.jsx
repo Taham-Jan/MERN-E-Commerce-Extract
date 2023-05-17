@@ -204,7 +204,6 @@ const Header = () => {
               startIcon={<YouTubeIcon />}
               style={{ color: "#cd201f", borderColor: "#cd201f" }}
             >
-              YouTube
             </MuiButton>
           </Link>
 
@@ -215,7 +214,6 @@ const Header = () => {
               startIcon={<FacebookIcon />}
               style={{ color: "#3b5998", borderColor: "#3b5998" }}
             >
-              Facebook
             </MuiButton>
           </Link>
           <Link
@@ -229,7 +227,6 @@ const Header = () => {
               startIcon={<InstagramIcon />}
               style={{ color: "#833AB4", borderColor: "#833AB4" }}
             >
-              Instagram
             </MuiButton>
           </Link>
         </ul>

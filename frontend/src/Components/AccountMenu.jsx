@@ -69,7 +69,6 @@ export default function AccountMenu({ user }) {
     navigate("/account");
   }
 
-
   function logoutUser() {
     dispatch(logout());
     alert.success("Logout successfully");
@@ -102,26 +101,51 @@ export default function AccountMenu({ user }) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar
-              sx={{
-                // width: '40',
-                // height: 40,
-                width: "2.5vmax !important",
-                height: "2.5vmax !important",
-                "@media screen and (min-width: 900px)and (max-width: 1200px)": {
-                  width: "4vmax !important",
-                  height: "4vmax !important",
-                },
-                "@media screen and (max-width: 900px)": {
-                  // width: 35,
-                  // height: 35,
-                  width: "6vmax !important",
-                  height: "6vmax !important",
-                },
-              }}
-            >
-              <UserAvatar src={UserDummy} alt="404" />
-            </Avatar>
+            {user && user.avatar && user.avatar.url ? (
+              <img
+                src={user.avatar.url}
+                alt="404"
+                style={{
+                  borderRadius: "50%",
+                  width: "2.5vmax",
+                  height: "2.5vmax",
+                  "@media screen and (min-width: 900px)and (max-width: 1200px)":
+                    {
+                      width: "4vmax",
+                      height: "4vmax",
+                    },
+                  "@media screen and (max-width: 900px)": {
+                    // width: 35,
+                    // height: 35,
+                    width: "6vmax",
+                    height: "6vmax",
+                  },
+                }}
+              />
+            ) : (
+              <Avatar
+                sx={{
+                  // width: '40',
+                  // height: 40,
+                  width: "2.5vmax !important",
+                  height: "2.5vmax !important",
+                  "@media screen and (min-width: 900px)and (max-width: 1200px)":
+                    {
+                      width: "4vmax !important",
+                      height: "4vmax !important",
+                    },
+                  "@media screen and (max-width: 900px)": {
+                    // width: 35,
+                    // height: 35,
+                    width: "6vmax !important",
+                    height: "6vmax !important",
+                  },
+                }}
+              >
+                {" "}
+                <UserAvatar src={UserDummy} alt="404" />{" "}
+              </Avatar>
+            )}
           </IconButton>
         </Tooltip>
       </Box>

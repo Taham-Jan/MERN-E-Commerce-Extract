@@ -158,6 +158,24 @@ Colors :root {
   padding: 2vmax;
   text-align: center;
 }
+.productHeadingsAdmin > h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  word-spacing: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  width: 100%;
+  padding: 2vmax;
+  text-align: center;
+}
+.productHeadingsAdmin > h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 1vmax;
+  margin: 2vmax auto;
+  text-transform: uppercase;
+}
 .WrapperProduct {
   display: flex;
   justify-content: space-between;
@@ -221,12 +239,17 @@ Colors :root {
     width: 80%;
   }
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 910px) {
   .productHeadings > h2 {
-    margin: 30vmax auto auto auto;
+    margin: 35vmax auto auto auto;
   }
 }
 @media only screen and (max-width: 700px) {
+  .productHeadings > h2 {
+    letter-spacing: 0;
+    word-spacing: 0;
+    font-size: 1rem;
+  }
   .wrapperOfCardAdmin > span,
   .wrapperOfCard > span,
   .detailsMainWrapper > span {

@@ -1,14 +1,14 @@
-.homeScreenWrapper {
+/* .homeScreenWrapper {
   margin-top: 2vw;
   outline-style: solid;
   outline-width: 5px;
   border: 6px double red;
   outline: 3px solid yellow;
   outline-offset: -3px;
-  /* background-image: linear-gradient(to bottom right, #d45ba1, #a784e0); */
-  /* outline-color: var(--OutlineColor); */
+  background-image: linear-gradient(to bottom right, #d45ba1, #a784e0); 
+   outline-color: var(--OutlineColor);
   outline-offset: -30px;
-}
+} */
 .homeScreenChildWrapper {
   overflow: hidden;
   border: 3px solid var(--OutlineColor);
@@ -24,27 +24,26 @@
   flex-direction: column;
   width: 100%;
   top: 0;
-  height: 80%;
-  height: 40vmax;
-  min-width: 320px;
+  min-width: 100%;
   position: absolute;
-  /* min-height: 40vmax; */
-  /* max-height: 450px; */
+  height: max-content;
+  min-height: 20vmax;
   border-radius: 0 0 10px 10px;
   overflow: hidden;
-  background-image: linear-gradient(to bottom right, rgba(212, 91, 161,0.7), rgba(167, 132, 224,0.7));
-  /* background-image: url('../Assets/Grey\ Minimalist\ Skincare\ Product\ Banner-min.png'); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(212, 91, 161, 0.7),
+    rgba(167, 132, 224, 0.7)
+  );
+  border-radius: 0 0 100% 100% / 20%;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
 }
 
 .ChildBanner {
   margin-top: 10vw;
+  margin-bottom: 2vw;
   max-width: calc(100%);
-  padding: 15px;
-  color: #fff;
+  /* padding: 15px; */
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -65,7 +64,7 @@
 .BannerWrapper {
   display: flex;
   flex-wrap: nowrap;
-  width: 50%;
+  width: 60%;
   max-width: 600px;
   margin-left: auto;
   justify-content: flex-end;
@@ -81,7 +80,7 @@
   margin-left: auto;
   /* background-color: var(--ThemeColor); */
   /* background-color: var(--BannerFontColor); */
-  background-color: rgba(255, 255, 255, 0.50);
+  background-color: rgba(255, 255, 255, 0.5);
   animation: bouncingBall 5s ease-in;
 }
 .ball > img {
@@ -135,7 +134,6 @@
 }
 
 @media screen and (max-width: 800px) {
-
 }
 
 /* p {

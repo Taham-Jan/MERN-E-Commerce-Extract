@@ -21,12 +21,17 @@
 }
 @media screen and (max-width:600px){
   .animatedText > h1 {
-    font-size: 1.5vmax; 
+    font-size: 2.9vmax; 
+  }
+}
+@media screen and (max-width:460px){
+  .animatedText > h1 {
+    font-size: 2.4vmax; 
   }
 }
 @media screen and (max-width:315px){
   .animatedText > h1 {
-    font-size: 0.8vmax; 
+    font-size: 2vmax; 
   }
 }
 .animatedText > h1 > span {

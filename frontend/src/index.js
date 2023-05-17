@@ -6,6 +6,7 @@ import {Provider} from 'react-redux';
 import store from './app/store';
 import {positions,transitions,Provider as AlertProvider} from 'react-alert';
 import AlertTemplate  from 'react-alert-template-basic';
+import ScrollToTop from './Components/ScrollToTop';
 
 const options = {
   timeout:5000,
@@ -17,6 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
+    <ScrollToTop />
   <Provider store={store}>
     <AlertProvider template={AlertTemplate} {...options}>
     <App />

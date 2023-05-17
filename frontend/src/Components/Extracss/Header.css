@@ -6,14 +6,14 @@
 .header {
   position: fixed;
   width: 100%;
-  height: 90px;
+  height: 75px;
   display: flex;
-  /* justify-content: space-evenly; */
   justify-content: center;
   align-items: center;
   z-index: 10;
   opacity: 1;
   cursor: default;
+  z-index: 999;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
 
 }
@@ -49,7 +49,7 @@
 }
 
 .nav-menu a:hover {
-  color: #f3cb6c !important;
+  color: var(--headerColor) !important;
   text-decoration: none;
   padding: 0;
   margin: 0;
@@ -71,7 +71,7 @@
 }
 
 .header-bg .nav-menu a:hover {
-  color: #f3cb6c !important;
+  color: var(--BannerFontColor) !important;
 
 }
 .header-bg .nav-menu a {
@@ -103,7 +103,7 @@
 }
 
 .cart-account a:hover {
-  color: #f3cb6c;
+  color: var(--BannerFontColor);
   text-decoration: none;
   padding: 0;
   margin: 0;
@@ -136,11 +136,12 @@
   /* background-color: var(--OutlineColor); */
   display: flex;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 90px;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
   gap: 1vmax;
+  z-index: 1;
 }
 .followUsDiv > h2 {
   display: flex;
@@ -149,6 +150,7 @@
 }
 .followUsDiv > .followUsChild {
   display: flex;
+  z-index: 1;
   gap: 1vmax;
 }
 

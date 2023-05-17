@@ -70,7 +70,7 @@ body::before {
   --ThemeColor:wheat;
   --PrimaryFontColor: rgb(100, 58, 107);
   /* --BannerFontColor:#FFECEF; */
-  --BannerFontColor:#242424;
+  --BannerFontColor:rgba(36, 36, 36,0.9);
 }
 
 

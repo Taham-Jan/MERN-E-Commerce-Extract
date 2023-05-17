@@ -19,7 +19,7 @@
 }
 
 .footer__logo >a> img {
-  width: 16vmax;
+  width: 10vmax;
 }
 .footer__addr h2 {
   margin-top: 1.3em;
@@ -28,6 +28,7 @@
   font-weight: 600;
 }
 .footer__addr h2 a{
+
   color: black;
   margin-top: 1.3em;
   font-family: 'Montserrat',sans-serif;
@@ -125,7 +126,11 @@
     font-size: 5vmax;
   }
 }
-
+@media screen and (max-width: 460px) {
+  .footer__addr h2 a{
+    display: flex;
+  }
+}
 @media screen and (min-width: 40.375em) {
   .footer__nav > * {
     flex: 1;
