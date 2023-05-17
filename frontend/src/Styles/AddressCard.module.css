@@ -1,0 +1,109 @@
+.card {
+  color: #242424;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+
+  transition: transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
+}
+
+.cardfront {
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3),
+    transparent 1px,
+    var(--ThemeColor) 2px
+  );
+  background-size: 3px 3px;
+  background-color: var(--ThemeColor);
+  border-radius: 1px;
+  /* box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.1),
+    0px 6px 8px 0px rgba(0, 0, 0, 0.1), 6px 0px 8px 0px rgba(0, 0, 0, 0.1),
+    -6px 0px 8px 0px rgba(0, 0, 0, 0.1); */
+  height: 100%;
+  padding: 5%;
+  position: absolute;
+  width: 100%;
+}
+
+.cardfront .layer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.cardfront .layer h1 {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -2px;
+  margin: 0 auto;
+  padding: 6px 18px 4px;
+  text-align: center;
+}
+.cardfront .layer span > svg {
+  margin: auto;
+}
+.cardfront .layer span {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 1vmax;
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 6px 18px 4px;
+  cursor: pointer;
+}
+.cardfront .layer .corner {
+  backface-visibility: hidden;
+  border-right: 2px solid #242424;
+  border-top: 2px solid #242424;
+  height: 12px;
+  position: absolute;
+  width: 12px;
+}
+.cardfront .layer .corner:nth-of-type(1) {
+  right: 0;
+  top: 0;
+}
+.cardfront .layer .corner:nth-of-type(2) {
+  left: 0;
+  top: 0;
+  transform: rotateZ(-90deg);
+}
+.cardfront .layer .corner:nth-of-type(3) {
+  bottom: 0;
+  left: 0;
+  transform: rotateZ(180deg);
+}
+.cardfront .layer .corner:nth-of-type(4) {
+  bottom: 0;
+  right: 0;
+  transform: rotateZ(90deg);
+}
+
+.cardWrapper {
+  min-height: 100px;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  transition: transform 1s;
+}
+.cardWrapper:hover {
+  transform: scale(1.03, 1.03);
+}
+@media screen and (max-width: 800px) {
+  .cardfront {
+    width: 70%;
+  }
+  .cardfront .layer span {
+    font-size: 1.3vmax;
+  }
+}

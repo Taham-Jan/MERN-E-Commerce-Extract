@@ -1,0 +1,125 @@
+exports.getAllProducts = async (req, res, next) => {
+  try {
+    // throw createHttpError(500,"TEST ERROR");
+    const resultPerPage = 8;
+    const productCount = await Product.countDocuments();
+    const apiFeature = new ApiFeatures(Product.find(), req.query)
+      .search()
+      .filter();
+
+    let products = await apiFeature.query;
+
+    let filteredProductCount = products.length;
+
+    apiFeature.pagination(resultPerPage);
+
+    products = await apiFeature.query.clone();
+    // Get the products with the sale price if sale is active
+    products = products.map((product) => ({
+      ...product.toJSON(),
+      price: product.salePrice,
+    }));
+    res.status(200).json({
+      success: true,
+      products,
+      productCount,
+      resultPerPage,
+      filteredProductCount,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
+   //     <t>
+        //       <div className="orderDetailsPage">
+        //         <div className="orderDetailsContainer">
+        //           <Typography component="h1">
+        //             Order #{order && order._id}
+        //           </Typography>
+        //           <Typography>Shipping Info</Typography>
+        //           <div className="orderDetailsContainerBox">
+        //             <div>
+        //               <p>Name:</p>
+        //               <span>{order.user && order.user.name}</span>
+        //             </div>
+        //             <div>
+        //               <p>Phone:</p>
+        //               <span>
+        //                 {order.shippingInfo && order.shippingInfo.contactNumber}
+        //               </span>
+        //             </div>
+        //             <div>
+        //               <p>Address:</p>
+        //               <span>
+        //                 {order.shippingInfo &&
+        //                   `${order.shippingInfo.address}, ${order.shippingInfo.city}, ${order.shippingInfo.state}, ${order.shippingInfo.zipCode}, ${order.shippingInfo.country}`}
+        //               </span>
+        //             </div>
+        //           </div>
+        //           <Typography>Payment</Typography>
+        //           <div className="orderDetailsContainerBox">
+        //             <div>
+        //               <p
+        //                 className={
+        //                   order.paymentInfo &&
+        //                   order.paymentInfo.status === "succeeded"
+        //                     ? "greenColor"
+        //                     : "redColor"
+        //                 }
+        //               >
+        //                 {order.paymentInfo &&
+        //                 order.paymentInfo.status === "succeeded"
+        //                   ? "PAID"
+        //                   : "NOT PAID"}
+        //               </p>
+        //             </div>
+
+        //             <div>
+        //               <p>Amount:</p>
+        //               <span>{order.grandTotalPrice && order.grandTotalPrice}</span>
+        //             </div>
+        //           </div>
+
+        //           <Typography>Order Status</Typography>
+        //           <div className="orderDetailsContainerBox">
+        //             <div>
+        //               <p
+        //                 className={
+        //                   order.orderStatus && order.orderStatus === "Delivered"
+        //                     ? "greenColor"
+        //                     : "redColor"
+        //                 }
+        //               >
+        //                 {order.orderStatus && order.orderStatus}
+        //               </p>
+        //             </div>
+        //           </div>
+        //         </div>
+
+        //         <div className="orderDetailsCartItems">
+        //           <Typography>Order Items:</Typography>
+        //           <div className="orderDetailsCartItemsContainer">
+        //             {order.orderItems &&
+        //               order.orderItems.map((item) => (
+        //                 <div key={item.product}>
+        //                   <img src={item.image} alt="Product" />
+        //                   <Link to={`/product/${item.product}`}>
+        //                     {item.name}
+        //                   </Link>{" "}
+        //                   <span>
+        //                     Subtotal: {item.price} X {item.quantity} ={" "}
+        //                     <b>Pkr-{item.price * item.quantity}/=</b>
+        //                    </span> <span>
+        //            w         Tax price:{" "}
+        //                     <b>Pkr-{order.taxPrice}/=</b>
+        //                     </span> <span> Shipping price: {" "}
+        //                     <b>Pkr-{order.shippingPrice}/=</b>
+        //                   </span>
+        //                 </div>
+        //               ))}
+        //           </div>
+        //         </div>
+        //       </div>
+        //     </t>

@@ -1,0 +1,15 @@
+.BannerBackground {
+  /* background-image: url("../Assets/grid-3227459.jpg"); */
+  /* background: linear-gradient(to bottom, #ffffff 20%, #ffffff 80%, #F6F6F2 20%, #F6F6F2 100%), radial-gradient(circle at center, #F6F6F2, #ffffff); */
+  /* background: linear-gradient(to right, #ff007f, #f94d8b, #eb73a7, #e094c1, #e0b0d5); */
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  /* background-image: url('../Assets/leaves-6629581.png');
+    background-size: cover;
+    background-position: center; */
+  /* border-radius: 0 0 100% 100% / 30%; */
+  /* border-radius: 0 0 80% 80% / 40%; */
+}

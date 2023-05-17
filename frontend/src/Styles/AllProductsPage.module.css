@@ -1,0 +1,126 @@
+.productsHeading {
+  margin: 2vmax auto;
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  word-spacing: 7px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  width: 100%;
+  padding: 2vmax;
+  text-align: center;
+}
+/* .AllReviewRow {
+  border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.AllReviewColumn {
+   max-width: 100%; width: 100%;
+  flex: 50%;
+  padding: 0 4px;
+  justify-content: center !important;
+} */
+.allProducts {
+  display: flex;
+  justify-content: flex-start;
+}
+.allProducts > .filterBox {
+  display: flex;
+  padding-right: 4vmax;
+  padding-left: 2vmax;
+  flex-direction: column;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.171);
+  /* padding: 2vmax; */
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5vmax;
+  justify-content: center;
+  min-height: 30vh;
+  gap: 15px;
+}
+
+.filterBox > p {
+  font-size: 1vmax;
+}
+
+.paginationBox {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categoryBox {
+  display: flex;
+  justify-content: center;
+}
+.categoryBox::before {
+  border-color: rgba(0, 0, 0, 0.171) !important;
+}
+.categoryBox::after {
+  border-color: var(--hovercolor) !important;
+}
+
+.categoryLabel > label {
+  color: #242424 !important;
+}
+
+.categoryLink {
+  color: rgba(36, 36, 36, 0.7);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.categoryLink:hover {
+  color: var(--hovercolor);
+}
+
+.radioGroupRoot {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+@media screen and (max-width: 900px) {
+  .radioGroupRoot {
+    display: flex !important;
+    flex-direction: row !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .categoryLink {
+   
+    font-weight: bold;
+    font-size: 2vmax;
+  }
+  .filterBox > p {
+    font-size: 2vmax;
+  }  
+  .allProducts {
+    width: 100%;
+    display: inline-block;
+  }
+
+  .allProducts > .filterBox {
+    border: none;
+    padding-right: 0;
+  }
+  .products {
+    padding: 0 2px;
+    justify-content: center;
+    min-height: 30vh;
+    gap: 3px;
+  }
+  .categoryLabel {
+    margin-top: 0 !important;
+    margin: auto !important;
+  margin-bottom: 1rem !important;
+  }
+}

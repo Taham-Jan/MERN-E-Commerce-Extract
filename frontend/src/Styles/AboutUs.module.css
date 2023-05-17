@@ -1,0 +1,161 @@
+.AboutUsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageMask {
+  flex: 1 1 30%;
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+  overflow: hidden;
+}
+.imageMask > img {
+  position: relative;
+  width: 20rem;
+  border: 10px solid #eee;
+  background-color: var(--headerColor);
+  grid-column: 2;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.imageMask > img:nth-child(1) {
+  transform: rotate(15deg);
+  z-index: 1;
+}
+.imageMask > img:nth-child(2) {
+  top: -30px;
+  right: -20px;
+  z-index: 2;
+  transform: rotate(-12deg);
+}
+.imageMask > img:nth-child(3) {
+  top: -50px;
+  z-index: 1;
+  transform: rotate(5deg);
+}
+.cirlea {
+  fill: var(--headerColor);
+  opacity: 0.4;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: -100px;
+}
+.cirleb {
+  fill: var(--headerColor);
+  opacity: 0.4;
+  z-index: -1;
+  position: absolute;
+  bottom: -60%;
+  right: 200px;
+}
+.AboutUsHeading > h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--PrimaryFontColor);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  padding: 1vmax;
+  text-align: center;
+  font-family: "Ikaros", sans-serif;
+}
+.AboutUsContent {
+  position: relative;
+  flex: 1 1 70%;
+  padding: 20px;
+}
+.AboutUsContent > p {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: -1px;
+  word-spacing: 4px;
+  padding: 0.6vmax;
+  font-family: "Montserrat", sans-serif;
+}
+.AboutUsContent > h4 {
+  padding: 1vmax;
+  border-bottom: 1px solid rgba(36, 36, 36, 0.2);
+  text-transform: uppercase;
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 800;
+  padding: 0.6vmax;
+  font-family: "Montserrat", sans-serif;
+}
+.AboutUsContent > h4 > svg {
+  opacity: 0.6;
+  transform: rotate(-85deg);
+}
+.AboutUsContent > ul > li,
+p {
+  padding: 1vmax;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: -1px;
+  word-spacing: 4px;
+  padding: 0.6vmax;
+  font-family: "Montserrat", sans-serif;
+  opacity: 0.8;
+}
+.AboutUsContent > ul > li>span {
+    text-transform: uppercase;
+    font-weight: 900;
+    opacity: 1;
+}
+.quote {
+    background-color: #f5f5f5;
+    border-left: 4px solid #333;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .quote p {
+    text-align: center;
+    font-weight: 900;
+    opacity: 1;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  
+@media (max-width: 1000px) {
+  .AboutUsContainer {
+    flex-direction: column;
+  }
+
+  .imageMask {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 20px;
+    order: -1;
+    width: 100%;
+  }
+  .imageMask > img {
+    width: 10rem;
+    max-width: 100%;
+    flex: 1 1 auto;
+    margin-right: 10px;
+  }
+  .imageMask > img:nth-child(1) {
+    right: -20px;
+    transform: rotate(10deg);
+  }
+  .imageMask > img:nth-child(2) {
+    top: 0;
+    right: -20px;
+    z-index: 2;
+    transform: rotate(-8deg);
+  }
+  .imageMask > img:nth-child(3) {
+    top: 0;
+    right: -10px;
+    transform: rotate(2deg);
+  }
+  .AboutUsContent {
+    order: 1;
+  }
+}

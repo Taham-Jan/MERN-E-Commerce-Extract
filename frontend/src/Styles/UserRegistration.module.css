@@ -1,0 +1,415 @@
+.LoginSignUpContainer {
+  position: relative;
+  /* width: 100vw;
+  height: 100vh; */
+  padding: 3vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(231, 231, 231); */
+}
+.MainLoginSignUpContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 3vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(231, 231, 231); */
+}
+.LoginSignUpBox {
+  background-color: rgba(242, 243, 245, 0.8);
+  /* background-color: white; */
+  width: 70%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 2vw;
+}
+
+.loginsignUptoggle {
+  display: flex;
+  height: 3vmax;
+}
+.loginsignUptoggle > p {
+  color: rgba(0, 0, 0, 0.678);
+  font-weight: 300;
+  font-size: 1vmax;
+  transition: all 0.5s;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+.loginsignUptoggle > p:hover {
+  color: #f3cb6c;
+}
+
+.LoginSignUpBox > div > button {
+  background-color: var(--ThemeColor);
+  height: 3px;
+  width: 50%;
+  border: none;
+  transition: all 0.5s;
+}
+.updateProfileHeading {
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7vmax;
+  padding: 1.3vmax;
+  /* border-bottom: 1px solid rgba(245, 222, 179,1); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  width: 50%;
+  margin: auto;
+}
+div > .errorMsg {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: red;
+  font-size: 1vmax;
+  gap: 2px;
+  margin-left: auto;
+}
+div > .optionalMsg {
+  display: flex;
+  align-items: center;
+  font-size: 1vmax;
+  margin-left: auto;
+  opacity: 0.6;
+}
+.errorMsg > svg {
+  width: 1.2vmax;
+}
+.loginForm > div > input.redBorder,
+.updateProfileForm > div > input.redBorder,
+.signUpForm > div > input.redBorder {
+  border-color: red;
+}
+.loginForm,
+.updateProfileForm,
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: auto;
+  padding: 2vmax;
+  /* justify-content: space-evenly; */
+  height: 70%;
+  transition: all 0.5s;
+  gap: 7px;
+}
+.loginForm > h2,
+.updateProfileForm > h2,
+.signUpForm > h2 {
+  font-size: 1.3vmax;
+}
+.loginForm > div > p,
+.updateProfileForm > div > p,
+.signUpForm > div > p {
+  font-size: 1vmax;
+  opacity: 0.6;
+}
+.loginForm > span,
+.updateProfileForm > span,
+.signUpForm > span {
+  text-align: center;
+  font-size: 1vmax;
+  opacity: 0.6;
+}
+.updateProfileForm > .cityZipcode {
+  gap: 10px;
+}
+.cityZipcodeLabel {
+  font-size: 1vmax;
+  display: flex;
+}
+.cityZipcodeLabel > section {
+  display: flex;
+  align-items: center;
+}
+.cityZipcodeLabel > section:first-child {
+  width: 50%;
+  display: flex;
+}
+
+.cityZipcodeLabel > section:last-child {
+  margin-left: 0.5rem;
+  text-align: center;
+  width: 50%;
+  display: flex;
+}
+.cityZipcodeLabel > section > p:nth-child(1) {
+  opacity: 0.6;
+}
+.cityZipcodeLabel > section > p:nth-child(2) {
+  display: flex;
+  align-items: center;
+  color: red;
+  font-size: 1vmax;
+  gap: 2px;
+  margin-left: auto;
+  opacity: 1 !important;
+}
+.signUpForm {
+  transform: translateY(-100%) translateX(-100vmax);
+}
+
+.loginForm > div,
+.updateProfileForm > div,
+.signUpForm > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.loginForm > div > input,
+.updateProfileForm > div > input,
+.signUpForm > div > input {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 1vmax;
+  outline: none;
+}
+.updateProfileForm > div > select {
+  padding: 1vmax 4vmax;
+  padding-right: 1vmax;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 1vmax;
+  outline: none;
+}
+.updateProfileForm > div > select > option {
+  padding: 4vmax;
+}
+
+.loginForm > div > svg,
+.updateProfileForm > div > svg,
+.signUpForm > div > svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+/* .passwordIcon{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+} */
+/* .passwordIcon1{
+  position: absolute;
+  transform: translateX(-100%);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+} */
+
+.cityZipcodeSvg {
+  position: absolute;
+  right: 48%;
+}
+.loginForm > a {
+  color: rgba(0, 0, 0, 0.651);
+  text-decoration: none;
+  align-self: flex-end;
+  transition: all 0.5s;
+  font: 500 0.8vmax "Gill Sans";
+}
+
+.loginForm > a:hover {
+  color: black;
+}
+
+#registerImage > img,
+#updateProfileImage > img {
+  width: 3vmax;
+  border-radius: 100%;
+}
+#registerImage > input,
+#updateProfileImage > input {
+  display: flex;
+  padding: 0%;
+}
+
+#registerImage > input::file-selector-button,
+#updateProfileImage > input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  font-weight: 400;
+  font-size: 0.8vmax;
+  transition: all 0.5s;
+  padding: 0 1vmax;
+  color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+
+#registerImage > input::file-selector-button:hover,
+#updateProfileImage > input::file-selector-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.loginBtn,
+.updateProfileBtn,
+.signUpBtn {
+  /* border: none;
+  background-color: tomato;
+  color: white;
+  font-weight: 300;
+  font-size: 0.9vmax;
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219); */
+  background-color: var(--ThemeColor) !important;
+  color: #242424 !important;
+  font-weight: 550 !important;
+  padding: 0.8rem !important;
+  transition: all 0.5s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+.loginBtn:hover,
+.updateProfileBtn:hover,
+.signUpBtn:hover {
+  background-color: #f3cb6c !important;
+}
+
+.shiftToLeft {
+  transform: translateX(-100%);
+}
+.shiftToNeutral {
+  transform: translateX(0%);
+}
+
+.shiftToNeutralForm {
+  transform: translateX(0%) translateY(-100%);
+}
+
+.shiftToRight {
+  border: 200px solid red;
+  transform: translateX(100%);
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+  .loginForm > div > p,
+  .updateProfileForm > div > p,
+  .signUpForm > div > p {
+    font-size: 1.6vmax;
+  }
+  .cityZipcodeLabel > section > p:nth-child(1) {
+    font-size: 1.6vmax;
+  }
+  .cityZipcodeLabel > section > p:nth-child(2) {
+    font-size: 1.6vmax;
+  }
+  div > .errorMsg {
+    font-size: 1.6vmax;
+  }
+  div > .optionalMsg {
+    font-size: 1.6vmax;
+  }
+  .loginForm > span,
+  .updateProfileForm > span,
+  .signUpForm > span {
+    font-size: 1.5vmax;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .cityZipcodeSvg {
+    right: 46%;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 400px) {
+  .cityZipcodeSvg {
+    right: 44%;
+  }
+}
+@media screen and (max-width: 200px) {
+  .cityZipcodeSvg {
+    right: 41%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .LoginSignUpContainer {
+    background-color: white;
+  }
+  .LoginSignUpBox {
+    width: 100%;
+    min-height: 95vh;
+  }
+  .loginsignUptoggle {
+    height: 5vmax;
+  }
+  .loginsignUptoggle > p {
+    font-weight: 300;
+    font-size: 1.5vmax;
+  }
+
+  .loginForm,
+  .updateProfileForm,
+  .signUpForm {
+    padding: 5vmax;
+  }
+
+  .loginForm > div > input,
+  .updateProfileForm > div > input,
+  .updateProfileForm > div > select,
+  .signUpForm > div > input {
+    padding: 2.5vmax 5vmax;
+    font-weight: 300;
+    font-size: 1.7vmax;
+  }
+
+  .loginForm > div > svg,
+  .updateProfileForm > div > svg,
+  .signUpForm > div > svg {
+    font-size: 2.8vmax;
+  }
+
+  .loginForm > a {
+    font-weight: 500;
+    font-size: 1.8vmax;
+  }
+
+  #registerImage > img,
+  #updateProfileImage > img {
+    width: 8vmax;
+    border-radius: 100%;
+  }
+
+  #registerImage > input::file-selector-button,
+  #updateProfileImage > input::file-selector-button {
+    height: 7vh;
+    font-weight: 400;
+    font-size: 1.8vmax;
+  }
+
+  .loginBtn,
+  .updateProfileBtn,
+  .signUpBtn {
+    font-weight: 300;
+    font-size: 1.9vmax;
+    padding: 1.8vmax;
+  }
+}

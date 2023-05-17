@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  /* justify-content: space-evenly; */
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 1;
+  cursor: default;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+
+}
+#bg {
+  position: relative;
+  height: 130px;
+}
+
+.header-bg {
+  transition: 0.5s;
+  /* border-bottom: 3px solid #ff3355; */
+  /* border-bottom: 3px solid var(--ThemeColor); */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  background: var(--headerColor);
+  color: var(--BannerFontColor);
+  padding: 1vw;
+}
+.header > img {
+  left: 0;
+  cursor: pointer;
+  margin-left: 4vw;
+  position: absolute;
+}
+.nav-menu {
+  display: flex;
+  width: 100% !important;
+  justify-content: center;
+}
+
+.nav-menu a:visited {
+  color: var(--BannerFontColor) !important;
+}
+
+.nav-menu a:hover {
+  color: #f3cb6c !important;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-menu li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.cart-account li {
+  list-style-type: none;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.nav-menu li {
+  padding: 0 1rem;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+.header-bg .nav-menu a:hover {
+  color: #f3cb6c !important;
+
+}
+.header-bg .nav-menu a {
+  color: var(--PrimaryFontColor) !important;
+}
+.nav-menu a,
+.cart-account a {
+  color: var(--BannerFontColor) !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cartImage > img {
+  width: 2.5vmax !important;
+  height: 2.5vmax !important;
+}
+
+.cart-account {
+  display: flex;
+  right: 0;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 4vw;
+  position: absolute;
+}
+.cart-account a:visited {
+  color: black;
+}
+
+.cart-account a:hover {
+  color: #f3cb6c;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+.navicon {
+  display: none;
+}
+
+.cartBadge {
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-family: "Ikaro", sans-serif;
+  background-color: black;
+  color: var(--ThemeColor);
+  position: absolute;
+  top: -25%;
+  right: -1%;
+  vertical-align: top;
+}
+.logoHeading {
+  color: black;
+  width: 10vmax;
+}
+.nav-menu .account-menu,
+.nav-menu .cart-menu {
+  margin: 0;
+  padding: 0;
+}
+.followUsDiv {
+  /* background-color: var(--OutlineColor); */
+  display: flex;
+  position: absolute;
+  margin-top: 100px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  gap: 1vmax;
+}
+.followUsDiv > h2 {
+  display: flex;
+  align-items: center;
+  font-size: 1vmax;
+}
+.followUsDiv > .followUsChild {
+  display: flex;
+  gap: 1vmax;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
+  .cartImage > img {
+    width: 4vmax !important;
+    height: 4vmax !important;
+  }
+  .cart-account {
+    width: 40% !important;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cartImage > img {
+    width: 5vmax !important;
+    height: 5vmax !important;
+  }
+
+  .header > img {
+    margin-left: 3rem;
+  }
+  .cartBadge {
+    font-size: 0.8rem !important;
+    padding: 4px 7px !important;
+    top: 0%;
+    right: 0%;
+  }
+  .header {
+    justify-content: flex-start;
+    gap: 2vmax;
+  }
+
+  .logoHeading {
+    width: 20vmax;
+  }
+  .navicon {
+    cursor: pointer;
+    display: block;
+    margin-left: 1vw;
+  }
+
+  .nav-menu {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    left: -100%;
+    height: 100vh;
+    text-align: center;
+    width: 100% !important;
+    transition: 0.3s;
+    z-index: -1;
+    border-top: 3px solid var(--ThemeColor);
+    background-image: linear-gradient(to bottom right, #d45ba1, #a784e0);
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-menu li {
+    padding: 1rem 0;
+  }
+
+  .nav-menu a {
+    font-size: 2rem;
+  }
+  .cart-account {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .cartBadge {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+
+  .cart-account {
+    margin-right: 2vw;
+    z-index: -1;
+  }
+}

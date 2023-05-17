@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Outfit:wght@100;300;400;500;600;700;800&display=swap");
+
+*{
+  scroll-behavior: smooth;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main-content {
+  min-height: 700px;
+
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.greenColor {
+  color: green !important;
+}
+.deliveredCss {
+  color: #609966 !important;
+  /* background-color: #609966 !important; */
+  border-radius: 4px !important;
+  text-align: center !important;
+}
+.processingCss {
+  color: #F45050 !important;
+  /* background-color: #F45050 !important; */
+  border-radius: 4px !important;
+  text-align: center !important;
+}
+.redColor {
+  color: red !important;
+}
+body {
+  /* overflow: hidden; */
+  margin: 0;
+  font-family: "Outfit", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background: rgba(212, 91, 161,0.2); */
+  /* background: rgba(212, 173, 252,0.2); */
+  background: #F3F3F3;
+  /* background-size: cover; 
+  background-position: center;  */
+}
+/* set the opacity of the background image
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: -1;
+} */
+:root{
+  --hovercolor: #f3cb6c;
+  /* --headerColor:rgba(255, 221, 238,1); */
+  --headerColor:rgb(225, 213, 235);
+  --backGroundColor:rgba(255, 221, 238,0.6);
+  /* --ThemeColor:#F5C6EC; */
+  --OutlineColor:pink;
+  --ThemeColor:wheat;
+  --PrimaryFontColor: rgb(100, 58, 107);
+  /* --BannerFontColor:#FFECEF; */
+  --BannerFontColor:#242424;
+}
+
+
+
+
+
+
