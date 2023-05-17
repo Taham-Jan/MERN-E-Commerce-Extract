@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const app = express();
-
+const path = require('path')
 require("./util/sale-expiry");
 const jsonParser = bodyParser.json({
   limit: "50mb",
@@ -33,6 +33,15 @@ app.get("/sample", (req, res) => {
 app.use("/api/v1", productRoute);
 app.use("/api/v1", userRoute);
 app.use("/api/v1", orderRoute);
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.join(__dirname,  '../frontend/build', "index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 
 //CREATEHTTPERROR
 app.use((error, req, res, next) => {
