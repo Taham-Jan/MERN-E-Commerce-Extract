@@ -1,55 +1,62 @@
-const createHttpError = require('http-errors');
-const morgan = require('morgan');
-const express = require('express');
-const productRoute = require('./Routes/product');
-const userRoute = require('./Routes/user');
-const orderRoute = require('./Routes/order');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload');
+const createHttpError = require("http-errors");
+const morgan = require("morgan");
+const express = require("express");
+const productRoute = require("./Routes/product");
+const userRoute = require("./Routes/user");
+const orderRoute = require("./Routes/order");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 const app = express();
 require("./util/sale-expiry");
 const jsonParser = bodyParser.json({
-  limit: '50mb',
+  limit: "50mb",
   extended: true,
 });
 
 const urlEncodedParser = bodyParser.urlencoded({
-  limit: '50mb',
+  limit: "50mb",
   extended: true,
 });
 
 app.use(jsonParser);
 app.use(urlEncodedParser);
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 app.use(cookieParser());
 // app.use(bodyParser.urlencoded({ limit: "50mb", extended:true}));
 app.use(fileUpload());
-app.get('/sample', (req, res) => {
- res.status(200).json({message:"whatsup"})
+app.get("/sample", (req, res) => {
+  res.status(200).json({ message: "whatsup" });
 });
-app.use('/api/v1',productRoute);
-app.use('/api/v1',userRoute);
-app.use('/api/v1',orderRoute);
-
-
+app.use("/api/v1", productRoute);
+app.use("/api/v1", userRoute);
+app.use("/api/v1", orderRoute);
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "frontend", "build", "index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 
 //CREATEHTTPERROR
 app.use((error, req, res, next) => {
   console.error(error);
   let statusCode = error.status || 500;
-  let errorMessage = error.message || 'An unknown error occurred.';
+  let errorMessage = error.message || "An unknown error occurred.";
 
-  if (error.name === 'CastError') {
+  if (error.name === "CastError") {
     statusCode = 400;
     errorMessage = `Resource not found. Invalid: ${error.path}`;
-  } else if (error.name === 'JsonWebTokenError') {
+  } else if (error.name === "JsonWebTokenError") {
     statusCode = 400;
-    errorMessage = 'Invalid JSON web token.';
-  } else if (error.name === 'TokenExpiredError') {
+    errorMessage = "Invalid JSON web token.";
+  } else if (error.name === "TokenExpiredError") {
     statusCode = 401;
-    errorMessage = 'Expired JSON web token.';
+    errorMessage = "Expired JSON web token.";
   }
 
   // Handle all other errors
@@ -79,7 +86,6 @@ app.use((error, req, res, next) => {
 //       errorMessage = `Json Web Token is Expired, try again!`
 //     }
 //     res.status(statuscode).json({ error: errorMessage })
-//  }); 
- 
+//  });
 
 module.exports = app;
