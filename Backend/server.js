@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv').config();
 const env = require("./util/validateEnv");
 const cloudinary = require('cloudinary');
+const path = require('path')
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 const port = env.PORT;
 
@@ -19,7 +21,15 @@ cloudinary.config({
     api_key:env.CLOUDINARY_API_KEY,
     api_secret:env.CLOUDINARY_API_SECRET,
 })
-
+app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "frontend", "build", "index.html"),
+      function (err) {
+        res.status(500).send(err);
+      }
+    );
+  });
+  
 mongoose.connect(env.MONGO_URI)
     .then(() => {
         console.log("MONGO CONNECTED!");
